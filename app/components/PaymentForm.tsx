@@ -13,7 +13,7 @@ export default function PaymentForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
      
-        //! Stripe.js hasn't loadet yet, never submit before ready.
+        //! If Stripe.js hasn't loadet yet, never submit before ready.
         if (!stripe || !elements) return
 
         setIsProcessing(true)
@@ -43,3 +43,6 @@ export default function PaymentForm() {
         </form>
     )
 }
+
+//? useStripe() and useElements() are hooks that read from the <Elements> context wrapper. 
+//? This hooks need that context to work.
