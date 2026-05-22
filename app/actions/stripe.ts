@@ -10,9 +10,10 @@ export async function createConnectedAccount() {
     //* Creating a new Express Account - Stripe will host the onboarding.
     const account = await stripe.accounts.create({
         type: 'express', 
-        country: 'CAN',
+        country: 'US',
         capabilities: {
             transfers: { requested: true },
+            card_payments: { requested: true },
         },
     })
 
